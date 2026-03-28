@@ -9,7 +9,7 @@ int main()
     int choice;
 
     do {
-        cout << "\n1- Add\n2- Remove\n3- Search by ID\n4- Display\n5- Enroll\n6- Show Courses\n7- Sort\n8- Save to File\n9- Search by Name\n10- Exit\n";
+        cout << "\n1- Add\n2- Remove\n3- Search by ID\n4- Display\n5- Enroll\n6- Show Courses\n7- Sort\n8- Save to File\n9- Search by Name\n10- Load From File\n11- Exit\n";
         cin >> choice;
 
         switch (choice) {
@@ -68,6 +68,11 @@ int main()
         }
 
         case 10:
+            manager.loadFromFile();
+            cout << "Data loaded successfully!\n";
+            break;
+
+        case 11:
             manager.saveToFile();
             cout << "Exiting...\n";
             break;
@@ -75,7 +80,7 @@ int main()
         default:
             cout << "Invalid choice!\n";
         }
-    } while (choice != 10);
+    } while (choice != 11);
 
     manager.saveToFile();
 
